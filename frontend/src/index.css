@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, #eef2ff 0, #f4f7ff 38%, transparent 60%),
+    radial-gradient(circle at 85% 0%, #dbeafe 0, #f4f7ff 35%, transparent 62%),
+    #f4f7ff;
+  color: #111827;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: #2563eb;
+}
+
+#root {
+  min-height: 100vh;
+}
