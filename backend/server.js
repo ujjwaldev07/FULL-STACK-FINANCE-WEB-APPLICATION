@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.get("/health", (req, res) => {
+app.use("/health", (req, res) => {
   res.status(200).json({ status: "success", message: "Finance API running 🚀" ,
     endpoints: {
       auth: "/api/auth",
