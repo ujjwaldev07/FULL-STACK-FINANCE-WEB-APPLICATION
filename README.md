@@ -79,12 +79,27 @@ git clone https://github.com/ujjwaldev07/FULL-STACK-FINANCE-WEB-APPLICATION.git
 2️⃣ Setup Backend:
 cd backend
 npm install
-npm start
+npm run dev
 
 3️⃣ Setup Frontend:
 cd frontend
 npm install
-npm start
+npm run dev
+
+☁️ Deploy on Render:
+This repo is configured for easy Render deployment with `render.yaml`.
+
+1) Push the latest code to GitHub.
+2) In Render, choose **New +** → **Blueprint**.
+3) Select this repository.
+4) Render will create:
+   - `finance-backend` (Node web service, rootDir: `backend`)
+   - `finance-frontend` (Static site, rootDir: `frontend`)
+5) In Render dashboard, set secure backend env vars:
+   - `MONGO_URI`
+   - `JWT_SECRET`
+6) Update frontend env var `VITE_API_URL` to your real backend URL:
+   - `https://<your-backend-service>.onrender.com/api`
 
 🔗 API Endpoints:
  Method	          Endpoint	               Description
