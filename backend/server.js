@@ -18,15 +18,33 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-app.head("/health", (req, res) => {
-  res.status(200).json({ status: "success", message: "Finance API running 🚀" ,
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "Finance backend is live",
+    health: "/api/health",
+  });
+});
+
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    message: "Finance API running",
     endpoints: {
       auth: "/api/auth",
       transactions: "/api/transactions",
-      categories: "/api/categories"
-    }
+      categories: "/api/categories",
+    },
   });
 });
+
+app.head("/api/health", (req, res) => {
+  res.status(200).end();
+});
+
+app.use("/api/auth", authRoutes);
+app.use("/api/transactions", transactionRoutes);
+app.use("/api/categories", categoryRoutes);
 
 
 app.use(notFound);
